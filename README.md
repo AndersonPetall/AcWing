@@ -1,4 +1,4 @@
 # AcWing
 
-algorithm& data structure 
+algorithm & data structure 
 
