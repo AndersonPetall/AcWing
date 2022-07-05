@@ -1,5 +1,7 @@
 传统链表一个节点内储存两个数据,一个为该节点的值,另一个为指针,指向该节点的下一个节点
 
+
+
 construct
   两个数组,一个储存当前节点的值,一个储存索引(连接当前节点与下一个节点)
 basic operators
@@ -7,6 +9,7 @@ basic operators
   插入 头结点之后
   插入 索引为k的节点之后
   删除 索引为k的节点
+
 
 
 construct explanation
@@ -25,23 +28,19 @@ void init(){
  head = -1;
  idx = 0;
 }
-
 //将x插到头结点后(即head之后)
 void add_to_head(int x){
  e[idx] = x;//存储结点
  ne[idx] = head;//结点指针指向head后一个结点
  head = idx++;//更换head后一个结点为当前结点, 总节点数+1
 }
-
 //将x插到k结点的后面
 void add(int k, int x){
  e[idx] = x;
  ne[idx] = ne[k];
  ne[k] = idx++;
 }
-
 //将下标为k的结点的后一个点删掉
 void remove(int k){
  ne[k] = ne[ne[k]];//更换k结点的下一个结点为k的下一个的下一个结点
- 
 }
