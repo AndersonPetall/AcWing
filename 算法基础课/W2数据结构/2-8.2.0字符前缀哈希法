@@ -1,1 +1,50 @@
+IDEA
+  将字符串的前缀和映射成值在一定范围内的数字
+
+IDEA EXPLANATION
+target
+  string str = "ABDCAJSK";
+    hash[0] = 0;
+    hash[1] = "A"的hash值 //ASCII 码
+    hash[2] = "AB"的hash值
+    hash[3] = "ABS"的hash值
+    hash[4] = "ABSD"的hash值
+instruction  
+  step1 将字符串转换为base进制的数
+    "ABSD" ==> result = A的值 * base ^ 3 + B的值 * base ^ 2 + S的值 * base ^ 1 + D的值 * base ^ 0
+  step2 将数取模缩放至范围 [0, Q-1] 之间
+      result = = result % Q;
+notation
+  1.0 任何字符的hash值都不能映射为0  ==> 假设 A的值 = 0, 则 AA的值 = 0,结果冲突
+  2.0 解决映射过程中,结果冲突的问题  ==> 足够幸运,设置数据(经验)
+    base = 132 或者 13331
+    Q = 2 ^ 64 ==> usigned long long
+    
+question: 已知 1 - (L-1)的hash值 以及 1 - K的hash值,求 L - K 的hash 值( L < K)
+  h(K-L) = h(K-1) - h(L-1-1) * p^K-L+1
+    Q: 操作中未进行取模缩放? ==> 将h[]类型设为 unsigned longlong,自动取模 
+    
+
+
+IMPLEMENATION
+construct
+  三个数组,一个储存输入的字符串,一个储存当前字符的前缀hash和,一个当前字符的位阶(个十百千万)
+basic operators
+  初始化
+  取得字符串索引为L, K之间的hash前缀和
+
+
+construct explanation
+  str[]
+  hash[]
+  rank[]
+operator explanation
+
+
+
+
+
+
+
+
 
