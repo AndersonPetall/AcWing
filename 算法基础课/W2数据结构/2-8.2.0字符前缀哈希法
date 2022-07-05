@@ -5,10 +5,10 @@ IDEA EXPLANATION
 target
   string str = "ABDCAJSK";
     hash[0] = 0;
-    hash[1] = "A"的hash值 //ASCII 码
-    hash[2] = "AB"的hash值
-    hash[3] = "ABS"的hash值
-    hash[4] = "ABSD"的hash值
+    hash[1] = "A"的hash值的和
+    hash[2] = "AB"的hash值的和
+    hash[3] = "ABS"的hash值的和
+    hash[4] = "ABSD"的hash值的和
 instruction  
   step1 将字符串转换为base进制的数
     "ABSD" ==> result = 'A'的值 * base ^ 3 + 'B'的值 * base ^ 2 + 'S'的值 * base ^ 1 + 'D'的值 * base ^ 0
@@ -42,12 +42,11 @@ construct explanation
   rank[]
     []内为index,str[]代表了字符串中的第idx个字符的位阶
 operator explanation
-
-
-
-
-
-
-
-
-
+//初始化  
+  p[0] = 1;
+  for(int i = 1; i <= n; ++i){
+      h[i] = h[i-1] * P + str[i]; //ASCII 码
+      p[i] = p[i-1] * P;
+  }
+//取得字符串索引为L, K之间的hash前缀和
+  h[r] - h[l-1]*p[r-l+1];
