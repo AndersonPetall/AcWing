@@ -1,0 +1,149 @@
+vector ==> 边长数组
+string ==>字符串 substr() c_str()
+queue ==> 队列push(), pop(), front()
+priority_queue ==> 优先队列/堆 push(), top(), pop()
+stack ==> 栈 push(), top(), pop()
+deque ==> 双端队列, 队头队尾都可以插入删除
+set, map, multiset, multimap ==> 基于平衡二叉树(红黑树), 动态维护数组序列
+unordered_set, unordered_map,unordered_multiset, unordered_multimap ==> 哈希表
+bitset ==> 压位
+
+
+
+vector
+size() 大小
+empty() 是否为空
+clear()  清空数组
+front()/back()  返回第一个/最后一个数
+push_back()/pop_back()  插入/删除最后一个数
+iteration: begin()/ end()  第一个/最后一个数后面一个数的指针
+支持比较运算
+vector<int> a
+[]支持随机寻址
+  系统为某一个程序分配空间的时候,所需时间与空间大小无关,与申请次数有关系
+  n = 10^6
+  1 + 2 + 4 +  ==> 1=10^6   均摊下来插入一个数的时间复杂度O(1)
+遍历方式:
+for(int i = 0; i < a.size(); ++i) cout << a[i] << ' ';
+for(vector<int>::iterator i = a.begin(); i != a.end(); ++i) cout << *i <<' ';
+for(auto i : a) cout << i << ' ';
+
+
+
+pair
+  first第一个元素
+  second第二个元素
+  支持比较,first第一关键字,second第二关键字,字典序
+pair<int, string> p;
+p.make_pair(10,"st");
+p{10, "shf"};
+pair<int,pair<int,int>> p;
+
+
+
+string
+  size();
+  clear()
+  empty()
+  a.c_str(); 存储字符串的起始地址
+string a = "dfad"
+a += 'a';
+a += "fasd";
+cout << a.substr(1,3) <<endl;
+cout << a.substr(1) <<endl;
+printf("%s\n",a.c_str());
+
+
+
+queue
+  push() 队尾插入
+  front() 返回队头
+  back() 返回队尾
+  pop() 弹出队头
+  size()
+  empty()
+
+
+
+priority_queue   默认大根堆
+  push() 插入元素
+  top() 返回堆顶
+  pop() 弹出堆顶
+怎么定义小根堆
+方法一:
+priority_queue<int> heap;
+heap.push(-x);  堆中插入数据的时候插入相反数
+方法二:
+priority_queue<int, vector<int>, greater<int>> heap;
+
+
+
+stack 栈
+  size()
+  empty()
+  push() 栈顶插入元素
+  top() 返回栈顶元素
+  pop() 弹出栈顶元素
+
+
+
+deque 双端队列  ==> 加强版vector //速度慢
+  size()
+  empty()
+  clear()
+  front();返回第一个元素
+  back()  返回最后一个元素
+  push_back() / pop_back()  插入/删除最后一个元素
+  push_front()/ pop_front()  插入/删除队首的第一个元素
+  [] 支持随机访问
+  iterator: begin(), end()
+
+
+
+set, map, multiset, multimap  维护有序序列
+  size()
+  emtpy()
+  clear()
+  begin()/end()  ++/--  返回前驱/后继  时间复杂度O(logn)
+ set/multiset
+   insert() 插入一个数
+   find() 查找一个数,不存在返回end()迭代器
+   count() 返回某个数的个数
+   erase() 1.0如果输入的数x,则删除x的所有结点 时间复杂 O(k + lgn) k为x的个数 2.0如果输入的是iterator,则删除该iterator
+   upper_bound/lower_bound
+     lower_bound(x) 返回大于等于x的最小的数的迭代器, 找不到返回end()
+     upper_bound(x) 返回大于x的最小的数的迭代器, 找不到返回end()
+ map/multimap 储存映射 A=>B
+   insert() 插入的参数是一个pair
+   erase()  输入的参数是一个pair 或者iterator
+   find()  
+   []  时间复杂度O(logn)
+   upper_bound/lower_bound
+
+map<string, int> a;
+a["ysdfsdf"] = 1;
+count << a["ysdfsdf"] <<endl  // output : 1
+
+
+
+unordered_set, unordered_map,unordered_multiset, unordered_multimap
+  无序
+  和上面的类似,增删查改的时间复杂度为O(1)
+  不支持upper_bound/lower_bound, 迭代器的++/--
+
+
+
+bitset   压位:一个位存一个bool变量 ==> 省8位空间
+  bitset<1000000> a;
+  ~, ^, |, &
+  >>, <<
+  ==, !=
+  []
+  count(), 返回多少个1
+  any 判断是否至少有一个1
+  none  判断是否全为空
+  set() 全部位置设置成1
+  set(k, v)  第k位置设置成v
+  reset() 全部位置设置成0
+  flip() 全部取反, 等价于 ~
+  flip(k) 第k位置取反
