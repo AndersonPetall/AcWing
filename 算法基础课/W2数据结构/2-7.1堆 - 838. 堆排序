@@ -1,0 +1,30 @@
+EDITION 1  :  根节点从1开始
+#include<iostream>
+#include<algorithm>
+using namespace std;
+const int N = 1e6 + 10;
+int n, m, h[N], cnt;
+void down(int idx){
+    int t = idx;
+    if(idx*2 <= cnt && h[idx*2] <= h[t]) t = idx*2;
+    if(idx*2+1 <= cnt && h[idx*2+1] <= h[t]) t = idx*2 + 1;
+    if(t != idx){
+        swap(h[t], h[idx]);
+        down(t);
+    }
+}
+int main(){
+    scanf("%d%d", &n, &m);
+    for(int i = 1; i <= n; ++i) scanf("%d", &h[i]);
+    cnt = n;
+    for(int i = n/2; i ; --i) down(i);
+    while(m--){
+        printf("%d ", h[1]);
+        h[1] = h[cnt--]; 
+        down(1);
+    }
+    return 0;
+}
+
+
+EDITION 2  :  根节点从0开始
