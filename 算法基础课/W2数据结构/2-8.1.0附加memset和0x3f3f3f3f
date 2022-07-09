@@ -1,0 +1,17 @@
+reference: https://www.jb51.net/article/223385.htm
+
+void memset ( void *s , char ch, unsigned n )
+函数功能：将s为首地址的一片连续的n个字节内存单元都赋值为ch
+说明:
+  emset函数是对n个字节进行赋值。而char类型占1个字节。但是int类型占4个字节，所以对int、short等类型赋值时，需要乘上字节数
+  memset函数第一个参数是指针类型，也就是说，只要我们给他一个地址就行了
+  
+  
+0x3f3f3f3f
+  ox表示十六进制
+  0x3f3f3f3f表示一个很大的数
+    数值乘二也不会超过int范围
+  0xbfbfbfbf表示一个很小的负数(原值很大, int类型时候越界变为负数)
+reference: 
+https://wenku.baidu.com/view/a2c76180f624ccbff121dd36a32d7375a517c657.html
+https://www.somode.com/course/10276.html
