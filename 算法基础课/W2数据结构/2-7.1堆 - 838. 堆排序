@@ -1,4 +1,4 @@
-EDITION 1  :  根节点从1开始
+EDITION 1  :  根节点从1开始计算
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -27,4 +27,31 @@ int main(){
 }
 
 
-EDITION 2  :  根节点从0开始
+EDITION 2  :  根节点从0开始计算
+#include<iostream>
+#include<algorithm>
+using namespace std;
+const int N = 1e6 + 10;
+int n, m, h[N], cnt;
+void down(int idx){
+    int t = idx, leftnode = 1, rightnode = 2;
+    if(idx != 0) leftnode = idx*2, rightnode = idx*2 + 1;
+    if(leftnode <= cnt && h[leftnode] <= h[t]) t = leftnode;
+    if(rightnode <= cnt && h[rightnode] <= h[t]) t = rightnode;
+    if(t != idx){
+        swap(h[t], h[idx]);
+        down(t);
+    }
+}
+int main(){
+    scanf("%d%d", &n, &m);
+    for(int i = 0; i < n; ++i) scanf("%d", &h[i]);
+    cnt = n - 1;
+    for(int i = n/2 - 1; i >= 0 ; --i) down(i);
+    while(m--){
+        printf("%d ", h[0]);
+        h[0] = h[cnt--]; 
+        down(0);
+    }
+    return 0;
+}
