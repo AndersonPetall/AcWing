@@ -1,4 +1,4 @@
-EDITION 1  :  根节点从1开始计算
+//EDITION 1  :  根节点从1开始计算
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -27,7 +27,7 @@ int main(){
 }
 
 
-EDITION 2  :  根节点从0开始计算
+//EDITION 2  :  根节点从0开始计算
 #include<iostream>
 #include<algorithm>
 using namespace std;
