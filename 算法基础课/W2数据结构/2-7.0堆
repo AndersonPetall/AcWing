@@ -1,3 +1,12 @@
+838. 堆排序
+https://www.acwing.com/activity/content/problem/content/888/
+https://www.acwing.com/problem/content/840/
+839. 模拟堆
+https://www.acwing.com/activity/content/problem/content/889/
+https://www.acwing.com/problem/content/841/
+
+
+
 堆
   小根堆
   完全二叉树: 父节点小于或等于子节点  (顶端为最小值)
@@ -19,8 +28,4 @@
   5.0 修改任意一个元素  heap[k] = x; down[k]; up[k];
 
 
-https://www.acwing.com/activity/content/problem/content/888/
-https://www.acwing.com/problem/content/840/
 
-https://www.acwing.com/activity/content/problem/content/889/
-https://www.acwing.com/problem/content/841/
