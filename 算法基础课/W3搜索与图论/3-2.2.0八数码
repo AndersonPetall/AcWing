@@ -1,1 +1,20 @@
-1
+https://www.acwing.com/activity/content/problem/content/908/
+https://www.acwing.com/problem/content/847/
+
+
+思想:
+  用string来存储矩阵
+  用string中每个字符的索引来映射矩阵中点的横纵坐标(位置)
+
+
+问题: 如何实现索引映射位置
+举例: 字符串 k = "123x45678"
+  x的索引 idx = k.find('x')
+  x的横坐标 x = idx/3
+  x的纵坐标 y = idx%3
+  
+
+问题: 如何实现字符的移动
+  pointX = x + moveVectorX;
+  pointY = y + moveVectorY;
+  swap(k[idx], k[3*pointX+pointY]);
