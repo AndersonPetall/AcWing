@@ -8,9 +8,11 @@
 {
   某方向符合条件
   {
+    位置改变;
     路径 + 1;
     当前位置的条件改变;
     当前位置作为新元素进入queue
+    若位置改变妨碍同层搜索判断,则恢复现场,否则保持改变
   }
 }
 
@@ -18,3 +20,6 @@
 
 https://www.acwing.com/activity/content/problem/content/907/
 https://www.acwing.com/problem/content/846/
+
+https://www.acwing.com/activity/content/problem/content/908/
+https://www.acwing.com/problem/content/847/
