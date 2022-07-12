@@ -2,7 +2,7 @@ https://www.acwing.com/activity/content/problem/content/908/
 https://www.acwing.com/problem/content/847/
 
 
-思想:
+思想:  位置改变影响同层判断,恢复现场
   用string来存储矩阵
   用string中每个字符的索引来映射矩阵中点的横纵坐标(位置)
 
