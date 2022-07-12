@@ -2,7 +2,7 @@ https://www.acwing.com/activity/content/problem/content/907/
 https://www.acwing.com/problem/content/846/
 
 
-思路:
+思路:  位置改变有利于判断,保持改变
   map[][]数组储存迷宫地图
   path[][]数组储存走到当前结点与初始结点的距离
   pair<int, int>模拟结点
