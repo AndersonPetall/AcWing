@@ -1,1 +1,17 @@
-11
+https://www.acwing.com/activity/content/problem/content/907/
+https://www.acwing.com/problem/content/846/
+
+
+思路:
+  map[][]数组储存迷宫地图
+  path[][]数组储存走到当前结点与初始结点的距离
+  pair<int, int>模拟结点
+  vectorX[4] = {-1,0,1,0}, vectorY[4] = {0,1,0,-1} 作为位置移动的四个方向向量
+  
+edition 1 
+  初始结点从(0,0)开始,也可以从(1,1)开始 
+  path全部赋值为-1作为判断条件之一,第一个结点对应的path则为0
+  
+edition 2
+  path全部赋值为1作为判断条件(原题干中1作为阻挡,与原题保持一直)
+  初始结点(1,1)开始 ==> 第一个结点向上/左移动越界(segmentation fault)
