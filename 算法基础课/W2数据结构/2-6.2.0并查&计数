@@ -1,1 +1,42 @@
+核心: 在并查集中引入数组,该数组记录当前集合的容量
+  p[]数组 代表 并查集
+    []内为索引,p[]值代表根结点
+  count[]数组 代表 某个并查集的元素
+    []内为root索引,count[]值代表以该root为根节点的集合的容量
+  
+操作
+  初始化  ==>  每个结点都是一个并查集,也都是一个根结点
+    所有结点的值初始化为其索引值 (p[])
+    所有结点的容量均为1 (count[]中)
+  合并
+    结点A的root指向结点B的root  ==>  结点A的root的结点值改为结点B的root的结点值
+    结点B的root的集合的容量 += 结点A的root的自核的容量
+  查询
+    结点A的root和结点B的root一致,则在同一个集合,否则不在
 
+find(int idx)
+{
+  if(p[idx] != idx) //当前点不为根结点,则递归处理
+    p[idx] = find(p[idx]); //第一次递归: 结点的值更改为其父结点的值; 第二次递归:结点的值和其父节点的值均改为其父父节点的值.......
+  return p[idx]; //查询根结点,则返回根结点的值,之后所有结点的值, 包括idx结点,其父节点,父父结点等的结点值均改为根结点  ==> 路劲压缩
+}
+
+
+合并索引为 a和 b两个数组的方式
+  edition 1  先找root后合并
+  特点:计算容量和合并数组顺序不分先后
+    a = find(a), b = find(b);
+    p[a] = b;
+    count[b] += count[a];
+  
+  edition 2  直接合并
+  特点:先计算容量,后合并数组  如果
+    count[find(b)] += count[find(a)];
+    p[find(a)] = find(b);
+
+  
+
+
+
+https://www.acwing.com/activity/content/problem/content/886/
+  https://www.acwing.com/problem/content/839/
