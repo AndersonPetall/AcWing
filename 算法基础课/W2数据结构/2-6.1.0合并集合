@@ -1,1 +1,25 @@
+构成
+  p[]  []内为索引,p[]值代表根结点
+    初始化 所有结点的值初始化为其索引的值,经过find()函数后,结点的值变更为根节点的值
+    根节点(root) 其索引和其值相同
 
+操作
+  初始化
+    所有结点的值初始化为其索引的值
+  合并
+    结点A的root指向结点B的root  ==>  结点A的root的结点值改为结点B的root的结点值
+  查找
+    结点A的root和结点B的root一致,则在同一个集合,否则不在
+
+find(int idx)
+{
+  if(p[idx] != idx) //当前点不为根结点,则递归处理
+    p[idx] = find(p[idx]); //第一次递归: 结点的值更改为其父结点的值; 第二次递归:结点的值和其父节点的值均改为其父父节点的值.......
+  return p[idx]; //查询根结点,则返回根结点的值,之后所有结点的值, 包括idx结点,其父节点,父父结点等的结点值均改为根结点  ==> 路劲压缩
+}
+  
+
+
+
+https://www.acwing.com/activity/content/problem/content/885/
+  https://www.acwing.com/problem/content/838/
