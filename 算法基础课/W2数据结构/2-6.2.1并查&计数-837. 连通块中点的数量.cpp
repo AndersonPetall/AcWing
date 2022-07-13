@@ -43,27 +43,25 @@ int main(){
 #include<iostream>
 using namespace std;
 const int N = 1e5 + 10;
-int n, m, p[N], count[N];
-int find(int x){
-    if(p[x] != x) p[x] = find(p[x]);
-    return p[x];
+int p[N], count[N];
+int find(int idx){
+    if(idx != p[idx]) p[idx] = find(p[idx]);
+    return p[idx];
 }
 int main(){
-    scanf("%d%d", &n , &m);
+    int n, m; scanf("%d%d", &n, &m);
     for(int i = 0; i < n; ++i){
         p[i] = i;
         count[i] = 1;
     }
     while(m--){
-        string op; cin >> op;
-        int a, b;
+        string op;int a, b; cin >> op;
         if(op == "C"){
             scanf("%d%d", &a, &b);
             a = find(a), b = find(b);
             if(find(a) != find(b)){
-		p[a] = b;   //加 和合并的顺序不重要,  a特指a所在的树,b特指b所在的树,root不会重复计数
+                p[a] = b;
                 count[b] += count[a];
-                //p[a] = b;
             }
         }
         if(op == "Q1"){
@@ -73,7 +71,7 @@ int main(){
         }
         if(op == "Q2"){
             scanf("%d", &a);
-            cout << count[find(a)] <<endl;
+            printf("%d\n", count[find(a)]);
         }
     }
     return 0;
