@@ -30,9 +30,11 @@ find(int idx)
     count[b] += count[a];
   
   edition 2  直接合并
-  特点:先计算容量,后合并数组  如果
+  特点:先计算容量,后合并数组  
     count[find(b)] += count[find(a)];
     p[find(a)] = find(b);
+  如果先合并数组后计算容量
+    p[find(a)] = find(b); 总容量 = count[find(b)] + count[find(a)] = count[find(b)] + count[find(b)] = 2 * count[find(b)];
 
   
 
