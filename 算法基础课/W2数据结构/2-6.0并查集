@@ -1,0 +1,26 @@
+查并集
+  目的介绍:
+   1.0 将两个集合和并
+   2.0 询问两个元素是否在一个集合当中
+
+思路: 
+每个集合用一个树来表示,树根的编号就是整个集合的编号
+每个节点的值为索引  ==> i表示该结点的索引 结点的值p[[i]表示该结点所在的树的root
+  初始化的时候,结点的值值初始化为索引的值 p[i] = i
+  合并的时候,结点的值改为根节点的索引 p[i] = root   ==> 路劲压缩,以当前root(根结点)为父节点的所有子节点,p[]的值都将直接改为root,而并非逐级寻找
+
+问题:
+  树根判断  =>  节点的值是否为自身索引的值 if(p[x] == x)
+  如何求x的集合编号  =>  寻找树根的值(索引) while(p[x] != x) x = p[x]
+  如何合并两个集合  =>  同理节点合并,集合A的root(树更)的结点值(索引)由自身索引改为集合B的root(树更)的结点值(索引) p[A] = B
+  
+  
+
+https://www.acwing.com/activity/content/problem/content/885/
+  https://www.acwing.com/problem/content/838/
+
+https://www.acwing.com/activity/content/problem/content/886/
+  https://www.acwing.com/problem/content/839/
+
+https://www.acwing.com/activity/content/problem/content/887/
+  https://www.acwing.com/problem/content/242/
