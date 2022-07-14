@@ -35,3 +35,7 @@
         更新根节点的距离:  x到原根节点的距离 + 原根节点到现根节点(y的根节点)的距离 = y到根节点的距离 + 1
       如果x y 的根节点相同, 则在同一个树上, 称述为验证语句
         验证双方距离模 3 的值, 若 x的值比 y的值大 1, 则为真(与之前语句不冲突), 否则为假(与之前语句冲突)
+
+
+https://www.acwing.com/activity/content/problem/content/887/
+  https://www.acwing.com/problem/content/242/
