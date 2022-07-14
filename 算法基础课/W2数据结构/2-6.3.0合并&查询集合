@@ -6,16 +6,21 @@
 
 
 
-查找合并函数
+查找合并函数  ==>  目的: 递归处理p[]和d[]两个数组,使其从初始值变更为对应的值
 int find(int idx){
     if(idx != p[idx]){
-        int temp = find(p[idx]);
-        d[idx] += d[p[idx]];
-        p[idx] = temp;
+        int temp = find(p[idx]);  //进入递归
+        d[idx] += d[p[idx]];  // 当前结点到root的距离 =当前结点到其父节点的距离 + 其父节点到root的距离
+        p[idx] = temp;  //路劲压缩
     }
     return p[idx];
 }
-
+ps: 递归处理的顺序不能改变
+若 p[idx] = find(p[idx]); d[idx] += d[p[idx]]; ==> d[p[idx]]中p[idx]已为root(根节点)
+  则p[]已经完成递归,d[]无法进入递归,d[]累加对象为d[root]
+若 d[idx] += d[p[idx]]; p[idx] = find(p[idx]); 
+  则p[]已经完成递归,d[]无法进入递归,d[]累加对象为未进行迭代累加的父节点距离(错误迭代)
+  ==>d[]进行从idx到树根的迭代累加(错误迭代); p[]进行从树根到idx的迭代
 
 
 题目分析
