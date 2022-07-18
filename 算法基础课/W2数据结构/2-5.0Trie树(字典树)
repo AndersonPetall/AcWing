@@ -14,3 +14,11 @@
     二维数组的一维[]用以记录idx从而构成索引, 二维[]用以区分元素的组成单位(26个字母/二进制数中的0和1 等等)
       EG:son[val][26] = idx 为某一节点, 则 son[idx][26] 为这个节点的某一子节点
   利用count[]数组来记录元素最后一个构成节点的标记,索引为idx,值为以该节点为标记的元素的个数(每个节点的idx不同,因此不会出现代指冲突)
+
+
+
+https://www.acwing.com/activity/content/problem/content/883/
+https://www.acwing.com/problem/content/837/
+
+https://www.acwing.com/activity/content/problem/content/884/
+https://www.acwing.com/problem/content/145/
