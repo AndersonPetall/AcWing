@@ -22,9 +22,10 @@
     []内为idx,值为以该节点为标记的元素的个数(每个节点的idx不同,因此不会出现代指冲突)
 
 
-
+基础:trie树的书写和理解
 https://www.acwing.com/activity/content/problem/content/883/
 https://www.acwing.com/problem/content/837/
 
+提升:trie树的应用
 https://www.acwing.com/activity/content/problem/content/884/
 https://www.acwing.com/problem/content/145/
