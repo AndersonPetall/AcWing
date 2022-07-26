@@ -34,13 +34,16 @@ void dfs(int u) {
 }
 树与图的bfs模板
 // 需要标记数组st[N],  遍历节点的每个相邻的结点
-void dfs(int u) {
-    st[u] = true; // 标记一下，记录为已经被搜索过了，下面进行搜索过程
-    for (int i = h[u]; i != -1; i = ne[i]) {
+void bfs(int u) {
+    queue<int> q; q.push(firstNote);
+    while(q.size()){
+      int t = q.front(); q.pop();
+      for (int i = h[u]; i != -1; i = ne[i]) {
         int j = e[i];
-        if (!st[j]) {
-            dfs(j);
+        if (!st[j]) { 
+          q.push(j);
         }
+      }
     }
 }
 
