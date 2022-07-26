@@ -35,12 +35,12 @@ void dfs(int u) {
 树与图的bfs模板
 // 需要标记数组st[N],  遍历节点的每个相邻的结点
 void bfs(int u) {
-    queue<int> q; q.push(firstNote);
+    queue<int> q; q.push(firstNote); // 标号为1 的结点进入队列
     while(q.size()){
       int t = q.front(); q.pop();
-      for (int i = h[u]; i != -1; i = ne[i]) {
+      for (int i = h[u]; i != -1; i = ne[i]) { //拓展t下面的所有结点
         int j = e[i];
-        if (!st[j]) { 
+        if (!st[j]) {  //若当前结点未进入队列, 则入队
           q.push(j);
         }
       }
