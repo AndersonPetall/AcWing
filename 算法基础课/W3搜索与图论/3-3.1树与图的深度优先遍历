@@ -2,7 +2,7 @@ https://www.acwing.com/activity/content/problem/content/909/
 https://www.acwing.com/problem/content/848/
 
 
-树与图的bfs模板
+树与图的dfs模板
 // 需要标记数组st[N],  遍历节点的每个相邻的结点
 void dfs(int u) {
     st[u] = true; // 标记一下，记录为已经被搜索过了，下面进行搜索过程
