@@ -24,9 +24,7 @@ void topsort(){
     if(tt == n ){
         for(int i = 1; i <= n; ++i) printf("%d ", q[i]);
     }
-    else{
-        puts("-1");
-    }
+    else puts("-1");
 }
 int main(){
     scanf("%d%d", &n, &m);
