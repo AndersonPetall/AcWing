@@ -1,4 +1,3 @@
-//EDITION 1
 #include<iostream>
 #include<algorithm>
 #include<cstring>
@@ -11,7 +10,7 @@ void add(int a, int b){
 }
 void topsort(){
     int hh = 0, tt = 0;
-    for(int i = 1; i <= n; ++i){
+    for(int i = 1; i <= n; ++i){//题干中第一个数据的编号为1
         if(!d[i]) q[++tt] = i;
     }
     while(hh <= tt){
