@@ -10,9 +10,9 @@ int dijkstra(){
     memset(dis, 0x3f, sizeof dis);
     dis[1] = 0;
     for(int i = 0; i < n; ++i){
-        int t = -1;
+        int t = -1; // t = 0;
         for(int j = 1; j <=n; ++j)
-            if(!st[j] && (t == -1 || dis[t] > dis[j])) t = j;
+            if(!st[j] && (t == -1 || dis[t] > dis[j])) t = j;   //!st[j] && (t == 0 || dis[t] > dis[j])
         st[t] = true;
         for(int j = 1; j <= n; ++j)
             dis[j] = min(dis[j], dis[t] + g[t][j]);
