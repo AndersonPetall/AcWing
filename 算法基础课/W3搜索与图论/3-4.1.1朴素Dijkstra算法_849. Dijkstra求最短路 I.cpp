@@ -10,12 +10,12 @@ bool st[N];
 int dijkstra(){
     memset(dis, 0x3f, sizeof dis); dis[1] = 0;
     for(int i = 0; i < n; ++i){
-        int t = -1; // t = 0;
+        int pointIdx = -1; // t = 0;
         for(int j = 1; j <= n; ++j)
-            if(!st[j] && (t == -1 || dis[j] < dis[t])) t = j;   //!st[j] && (t == 0 || dis[t] > dis[j])
-        st[t] = true;
+            if(!st[j] && (pointIdx == -1 || dis[j] < dis[pointIdx])) pointIdx = j;   //!st[j] && (pointIdx == 0 || dis[pointIdx] > dis[j])
+        st[pointIdx] = true;
         for(int j = 1; j <= n; ++j)
-            dis[j] = min(dis[j], dis[t] + g[t][j]);
+            dis[j] = min(dis[j], dis[pointIdx] + g[pointIdx][j]);
     }
     return dis[n] == 0x3f3f3f3f ? -1 : dis[n];
 }
@@ -47,13 +47,13 @@ void add(int a, int b, int c){
 int dijkstra(){
     memset(dis, 0x3f, sizeof dis); dis[1] = 0;
     for(int i = 0; i < n; ++i){
-        int t = -1;
+        int pointIdx = -1;
         for(int j = 1; j <= n; ++j)
-            if(!st[j] &&(t == -1 || dis[j] < dis[t])) t = j;
-        st[t] = true;
+            if(!st[j] &&(pointIdx == -1 || dis[j] < dis[pointIdx])) pointIdx = j;
+        st[pointIdx] = true;
         for(int j = h[t]; j != -1 ; j = ne[j]){
-            int ver = e[j];
-            dis[ver] = min(dis[ver], dis[t] + w[j]);
+            int linkPointIdx = e[j];
+            dis[linkPointIdx] = min(dis[linkPointIdx], dis[pointIdx] + w[j]);
         }
     }
     return dis[n] == 0x3f3f3f3f ? -1 : dis[n];
