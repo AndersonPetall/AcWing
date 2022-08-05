@@ -1,0 +1,32 @@
+基本操作
+  top 访问队头元素
+  empty 队列是否为空
+  size 返回队列内元素个数
+  push 插入元素到队尾 (并排序)
+  emplace 原地构造一个元素并插入队列
+  pop 弹出队头元素
+  swap 交换内容
+
+
+定义: priority_queue<Type, Container, Functional> 
+  Type数据类型
+  Container容器类型(必须使用数据实现的容器,vector,deque等等,不能是list)
+  Functional是比较方式
+
+
+升序(默认)
+  priority_queue<int, vector<int>, greater<int>> q;
+降序
+  priority_queue<int, vector<int>, less<int>> q;
+
+
+简写
+  priority_queue<int> q 等同于priority_queue<int, vector<int>, greater<int>> q;
+
+
+当priority_queue遇见pair
+  先用pair.first排序,后用pair.second排序
+
+
+reference
+  https://www.jb51.net/article/177576.htm
