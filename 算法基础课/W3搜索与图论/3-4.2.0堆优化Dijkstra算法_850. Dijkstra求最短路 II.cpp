@@ -22,10 +22,10 @@ int dijkstra(){
         if(st[pointIdx]) continue;
         st[pointIdx] = true;
         for(int i = h[pointIdx]; i != -1; i = ne[i]){
-            int subPointIdx = e[i];
-            if(dis[subPointIdx] > dis[pointIdx] + w[i]){
-                dis[subPointIdx] = dis[pointIdx] + w[i];
-                heap.push({dis[subPointIdx], subPointIdx});
+            int linkPointIdx = e[i];
+            if(dis[linkPointIdx] > dis[pointIdx] + w[i]){
+                dis[linkPointIdx] = dis[pointIdx] + w[i];
+                heap.push({dis[linkPointIdx], linkPointIdx});
             }
         }
     }
