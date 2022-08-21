@@ -1,0 +1,22 @@
+struct  的定义和使用
+
+定义
+  struct StructType{ int a; int b;};
+使用
+  struct StructType s1;
+  s1.a = 10;s1.b = 10;
+  struct StructType s2 = {10, 10};
+
+
+定义时创建变量
+way1: struct StructType{int a; int b;} s1;
+way2: struct {int a; int b;} s1; 
+  StructType为结构体类型
+  s1 结构体变量
+
+
+typedef 与struct的定义
+way1: typedef struct StructType{int a; int b;} ST;
+way1: typedef struct {int a; int b;} ST;
+  StructType为结构体类型
+  ST为别名
