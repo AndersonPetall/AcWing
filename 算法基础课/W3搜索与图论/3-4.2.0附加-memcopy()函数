@@ -1,1 +1,17 @@
-111
+头文件 
+  C++：#include<cstring>
+  C语言：#include<string.h>
+函数原型
+  void *memcpy(void *destin, void *source, unsigned n);
+参数
+  destin-- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针
+  source-- 指向要复制的数据源，类型强制转换为 void* 指针
+  n-- 要被复制的字节数
+  
+  
+  
+EG
+  const char src[50] = "http://www.runoob.com";
+  char dest[50];
+  memcpy(dest, src, strlen(src)+1);
+  printf("dest = %s\n", dest);   // dest = http://www.runoob.com
