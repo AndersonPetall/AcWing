@@ -1,3 +1,42 @@
+//EDITION 1  DFS self
+#include<iostream>
+#include<cstring>
+using namespace std;
+const int N = 1e5 + 10, M = 2e5 + 10;
+int n, m, h[N], e[M], ne[M], idx;
+int color[N];
+void add(int a, int b){
+    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+}
+bool dfs(int pointIdx, int colorType){
+    color[pointIdx] = colorType;
+    for(int i = h[pointIdx]; i != -1; i = ne[i]){
+        int nextPointIdx = e[i];
+        if(!color[nextPointIdx] && !dfs(nextPointIdx, 3- colorType)) return false;
+        else if(color[nextPointIdx] == colorType) return false;
+    }
+    return true;
+}
+int main(){
+    scanf("%d%d", &n, &m);
+    memset(h, -1, sizeof h);
+    while(m--){
+        int a, b; scanf("%d%d", &a, &b);
+        add(a, b), add(b, a);
+    }
+    bool flag = true;
+    for(int i = 1; i <= n; ++i){
+        if(!color[i] && !dfs(i, 1)){
+            flag = false;
+            break;
+        }
+    }
+    flag ? puts("Yes") : puts("No");
+    return 0;
+}
+
+
+//EDITION 2  DFS ACwing
 #include<iostream>
 #include<cstring>
 #include<algorithm>
