@@ -1,1 +1,20 @@
+queue 队列  ==> 先进先出
 
+思路:
+  用数组模拟队列  q[N]
+  利用head作为索引模拟队头  head
+  利用tail作为索引模拟队尾  tail
+
+操作:
+情况一: head = 0; tail = -1;
+  添加队列数据方式为 q[++tail] = x;
+  队列中第一个数据的下标为  head
+  队列中最后一个数据的下标为  tail
+  判断队列存在  head <= tail
+
+
+情况二: head = tail = 0;
+  添加队列数据方式为 q[tail++] = x;
+  队列中第一个数据的下标为  head
+  队列中最后一个数据的下标为  tail - 1
+  判断队列存在  head < tail
