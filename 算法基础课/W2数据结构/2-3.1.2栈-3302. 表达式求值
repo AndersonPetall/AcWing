@@ -1,1 +1,17 @@
-111
+思路:
+  对于一个expression, 类型string,由两个部分组成 数组 + 运算符
+    一个栈储存数字  stack<int> num 
+    一个栈储存运算符  stack<char> op
+  
+构建:  遍历expression的每一个字符 c
+  若c为数字,计算数字,入栈num
+  若c为'(', 入栈op
+  若c为')', 
+    弹出op元素进行计算,直至遇见'('
+    删除op栈顶的'('
+  若c为运算符
+    当op的栈顶元素优先级比不比c的优先级低,弹出op元素进行计算
+    将c推入op中
+    
+利用unordered_map<char, int>来构建运算符优先级
+  
