@@ -1,3 +1,32 @@
+//EDITION 1 self
+{
+    unordered_map<char, int> pr{ {'+', 1}, {'-', 1}, {'*',2}, {'/', 2} };
+    string str; cin >> str;
+    for(int i = 0; i < str.size(); ++i){
+        auto c = str[i];
+        if(isdigit(c)){
+            int x = 0, j = i;
+            while(j < str.size() && isdigit(str[j])) x = x*10 + str[j++] - '0';
+            num.push(x);
+            i = --j;
+        }
+        else if(c == '(') op.push(c);
+        else if(c == ')'){
+            while(op.top() != '(') cal();
+            op.pop();
+        }
+        else{
+            while(op.size() && op.top() != '(' && pr[op.top()] >= pr[c]) cal();
+            op.push(c);
+        }
+    }
+    while(op.size()) cal();
+    printf("%d\n", num.top());
+    return 0;
+}
+
+
+//EDITION ACwing
 #include<iostream>
 #include<cstring>
 #include<algorithm>
