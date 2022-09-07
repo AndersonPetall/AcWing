@@ -15,7 +15,7 @@ int main(){
     LL res = 1;
     for(auto x : primes){
         LL a = x.first, b = x.second, total = 1;
-        while(b--) total = (total * a + 1) % mod;
+        while(b--) total = (total * a + 1) % mod;  //防止数据溢出变为负数
         res = res * total % mod;
     }
     printf("%lld\n", res);
