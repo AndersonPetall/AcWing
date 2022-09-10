@@ -36,4 +36,4 @@ eulers[]数组储存整数i的欧拉函数
     若primes和i互质
       eulers[]计算
     若primes和i不互质, 且primes为i的最小质数
-      eulers[]计算; 退出循环
+      eulers[]计算; 退出循环;
