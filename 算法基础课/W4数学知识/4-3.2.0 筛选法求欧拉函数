@@ -29,8 +29,11 @@ eulers[]数组储存整数i的欧拉函数
 
 从小到大遍历所有数
   若当前数i没有标记,则为质数
-    primes[]
-    eulers[]
+    primes[]录入
+    eulers[]计算
   利用当前数i和质数数组进行操作 t = i * primes
     对t进行标记(合数)
-    若primes为i的最小质数,
+    若primes和i互质
+      eulers[]计算
+    若primes和i不互质, 且primes为i的最小质数
+      eulers[]计算; 退出循环
