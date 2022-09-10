@@ -1,3 +1,33 @@
+//EDITION SELF
+#include<iostream>
+using namespace std;
+const int N = 1e6 + 10;
+int primes[N], cnt, eulers[N];
+bool st[N];
+void get_euler(int x){
+    eulers[1] = 1;
+    for(int i = 2; i <= x; ++i){
+        if(!st[i]) primes[cnt++] = i, eulers[i] = i -1;
+        for(int j =0; primes[j] <= x/i; ++j){
+            st[primes[j] * i] = true;
+            if(i % primes[j] == 0){
+                eulers[primes[j] * i] = eulers[i] * primes[j];
+                break;
+            }
+            eulers[primes[j] * i] = eulers[i] * (primes[j] - 1);
+        }
+    }
+}
+int main(){
+    int n; cin >> n; get_euler(n);
+    long long res = 0;
+    for(int i = 1; i <= n; ++i)res += eulers[i];
+    printf("%lld\n", res);
+    return 0;
+}
+
+
+//EDITION ACwing
 #include<iostream>
 using namespace std;
 const int N = 1e6 + 10;
