@@ -1,0 +1,11 @@
+
+
+way1:
+res = res/i*(i-1)
+记得要先写除法，再写乘法  ==>  避免溢出
+
+way2:
+res = res - res/i
+
+way3:
+res -= res/i
