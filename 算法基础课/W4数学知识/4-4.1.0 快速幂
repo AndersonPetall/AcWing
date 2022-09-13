@@ -1,2 +1,9 @@
 快速幂(Exponentiation by squaring，平方求幂)
 
+目标:  a^n
+普通求法:  O(n)
+  for n次循环
+    a *= a
+快速幂:  O(logn)
+  通过表达式a = a*a, 预处理出 a^(2^0), a^(2^1), a^(2^2)...a^(2^logn)
+  将n表达为二进制,即用2^0, 2^1...2^logn表示 
