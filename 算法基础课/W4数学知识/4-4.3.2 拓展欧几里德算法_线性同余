@@ -5,3 +5,7 @@
   ==> a*x - b = m*y
   ==> a*x - m*y = b (拓展欧几里得算法)
   ==> gcd(a,m)|b  a和m的最小公倍数能被b整除 
+
+
+a*x + b*y = gcd
+a*x' + y*y' = b  ==> x' = x*b/gcd;
