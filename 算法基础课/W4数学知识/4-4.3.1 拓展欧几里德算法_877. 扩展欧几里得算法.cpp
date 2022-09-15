@@ -6,7 +6,7 @@ int exgcd(int a, int b, int &x, int &y){
         x = 1, y = 0;
         return a;
     }
-    int d = exgcd(b, a%b, y, x);  //
+    int d = exgcd(b, a%b, y, x);  // x = &y, y = &x
     y -= a/b*x;
     return d;
 }
