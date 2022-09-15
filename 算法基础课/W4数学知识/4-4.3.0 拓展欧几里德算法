@@ -1,1 +1,16 @@
-
+拓展欧几里德算法Extended Euclidean algorithm
+定义:
+  已知整数a、b，扩展欧几里得算法可以在求得a、b的最大公约数的同时，能找到整数x、y（其中一个很可能是负数），使它们满足貝祖等式 x*a + y*b = gcd(a, b)
+  
+思路:  递归构建
+构建:
+求解方程: x*a + y*b = gcd(a, b)
+若b = 0  (边界)
+  gcd(a, b) = a
+  x = 1
+若b \= 0  (普通)
+  根据 4-2.3.0 欧几里德算法, gcd(a, b) = gcd(b, a%b)
+  x*a + y*b = gcd(a, b)
+  x1*b + y1*(a%b) = gcd(b, a%b) = x1*b + y1*(a-[a/b]*b) = y1*a + x1*(1-[a/b])*b
+  ==> x = y1
+      y = (1-[a/b]) * x1 
