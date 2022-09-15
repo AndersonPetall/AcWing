@@ -7,11 +7,15 @@
   ==> gcd(a,m)|b  a和m的最小公倍数能被b整除 
 
 
-a*x + b*y = gcd
-a*x' + y*y' = b  ==> x' = x*b/gcd;
+a*x + m*y = gcd
+a*x' + m*y' = b  ==> x' = x*b/gcd;
 
 
 PS
 最后为什么要对　m取模?
   (a*x) % m = b  ==>  (a * (x % m)) % m = b
   答: 题目要求结果x' 在 int 的范围内, 结果x'和 x'%m 对 m 同余, 所以对m 取模能够使得结果x' 在int 的范围内
+为什么x'和 x'%m 对 m 同余?
+  假设x' 不在int范围内, x'%m 在int范围内
+  a*x' + m*y' = b  ==>  a*(x1 + n*m) + m*(y1-n*a) = b  (n为某整数)
+  x' = x1 + n*m  ==> x1 = x'%m
