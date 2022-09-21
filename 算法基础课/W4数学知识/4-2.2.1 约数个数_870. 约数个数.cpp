@@ -3,7 +3,7 @@
 using namespace std;
 const int mod = 1e9 + 7;
 int main(){
-    int n; scanf("%d", & n);
+    int n; scanf("%d", &n);
     unordered_map<int, int> primes;
     while(n--){
         int x; scanf("%d", &x);
