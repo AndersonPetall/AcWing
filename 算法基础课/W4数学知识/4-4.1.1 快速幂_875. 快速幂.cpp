@@ -1,8 +1,8 @@
 //EDITION self
 #include<iostream>
 using namespace std;
-using LL = long long;
-LL qmi(int a, int b, int c){
+using LL = long long;  //防止数据溢出,用LL
+LL qmi(LL a, LL b, LL c){
     LL res = 1;
     while(b){
         if(b&1) res = res * a % c;
