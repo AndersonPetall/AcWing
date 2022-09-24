@@ -29,7 +29,8 @@ using LL = long long;
 LL qmi(LL a, LL b, LL c){
     if(!b) return 1;
     LL res = qmi(a*a%c, b>>1, c);
-    if(b&1) return res*a%c; else return res;
+    if(b&1) res *= a%c; 
+    else return res;
 }
 int main(){
     int n; scanf("%d", &n);
