@@ -8,5 +8,5 @@ b|a b=a*m  ==>  b 能够被 a 整除
 性质5：若a≡b(mod m) & c≡d(mod m)  那么ac≡bd(mod m) (可乘性)
 性质6：若a≡b(mod m)  那么a*n≡b*n(mod m) (其中n为自然数)
 性质7：若a*c≡b*c(mod m) & gcd(c，m)=1，那么a≡b(mod m) (gcd(c，m)表示c与m的最大公约数)
-性质8：若a≡b(mod m)  那么a的n次方和b的n次方也对于m同余。
+性质8：若a≡b(mod m)  那么a^n≡b^n(mod m)
 性质9：若a≡b(mod m) & c≡d(mod m) & e≡f(mod m) ... x≡y(mod m)  那么：(a+c+e+……+x) ≡ (b+d+f+……+y)(mod m)
