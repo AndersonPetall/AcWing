@@ -1,4 +1,4 @@
-//EDITION self
+//EDITION self-迭代  Recursive
 #include<iostream>
 using namespace std;
 using LL = long long;  //防止数据溢出,用LL
@@ -16,6 +16,26 @@ int main(){
     while(n--){
         LL a, b, c; scanf("%lld%lld%lld", &a, &b, &c);
         printf("%lld\n",qmi(a,b,c));
+    }
+    return 0;
+}
+
+
+
+//EDITION self-递归  Iterations
+#include<iostream>
+using namespace std;
+using LL = long long;
+LL qmi(LL a, LL b, LL c){
+    if(!b) return 1;
+    LL res = qmi(a*a%c, b>>1, c);
+    if(b&1) return res*a%c; else return res;
+}
+int main(){
+    int n; scanf("%d", &n);
+    while(n--){
+        LL a, b, c; scanf("%lld%lld%lld", &a, &b, &c);
+        printf("%lld\n", qmi(a,b,c));
     }
     return 0;
 }
