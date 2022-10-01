@@ -28,3 +28,6 @@ b|a a=b*m  ==>  a整除b / b 能够被 a 整除
     推论==>  若 a*c≡b*c(mod m) & gcd(m,d) = 1, 则 a≡b(mod m)
   乘法: 若 a≡b(mod m), 则 a*k≡b*k(mod m*k) k∈Z+(正整数)  
     推论==>  若 a≡b(mod m), 且 d 为a,b和m的任意一公约数, 则a/d≡b/d(mod m/d)
+6.0 其他
+  性质8：若a≡b(mod m),  则a^n≡b^n(mod m)
+  性质9：若a≡b(mod m) & c≡d(mod m) & e≡f(mod m) ... x≡y(mod m),  则(a+c+e+……+x) ≡ (b+d+f+……+y)(mod m)
