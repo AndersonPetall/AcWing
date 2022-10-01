@@ -1,4 +1,4 @@
-b|a b=a*m  ==>  b 能够被 a 整除
+b|a a=b*m  ==>  a整除b / b 能够被 a 整除
 
 
 性质1：a≡a(mod m)  (反身性)
@@ -19,8 +19,10 @@ b|a b=a*m  ==>  b 能够被 a 整除
 3.0 传递性
   传递1: 若 a≡b(mod m) & b≡c(mod m),  则 a≡c(mod m)
   传递2: 若 a≡b(mod m),  则 a≡b(mod m*i) i∈Z*(非零整数)
-  传递3: 若 a≡b(mod m) & d,  则 a≡c(mod m)
+  传递3: 若 a≡b(mod m) & d|m,  则 a≡c(mod d)
 4.0 线性运算
   同余加减: 若 a≡b(mod m) & c≡d(mod m),  则 a±c≡b±d(mod m)
   同余相乘: 若 a≡b(mod m) & c≡d(mod m),  则 a*c≡b*d(mod m)
-5.0
+5.0 模数运算
+  乘法: 
+  除法: 
