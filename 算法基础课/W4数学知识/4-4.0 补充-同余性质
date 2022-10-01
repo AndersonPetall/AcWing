@@ -10,3 +10,17 @@ b|a b=a*m  ==>  b 能够被 a 整除
 性质7：若a*c≡b*c(mod m) & gcd(c，m)=1，那么a≡b(mod m) (gcd(c，m)表示c与m的最大公约数)
 性质8：若a≡b(mod m)  那么a^n≡b^n(mod m)
 性质9：若a≡b(mod m) & c≡d(mod m) & e≡f(mod m) ... x≡y(mod m)  那么：(a+c+e+……+x) ≡ (b+d+f+……+y)(mod m)
+
+
+1.0 自反性
+  a≡a(mod m)
+2.0 对称性
+  若 a≡b(mod m),  则 b≡a(mod m)
+3.0 传递性
+  传递1: 若 a≡b(mod m) & b≡c(mod m),  则 a≡c(mod m)
+  传递2: 若 a≡b(mod m),  则 a≡b(mod m*i) i∈Z*(非零整数)
+  传递3: 若 a≡b(mod m) & d,  则 a≡c(mod m)
+4.0 线性运算
+  同余加减: 若 a≡b(mod m) & c≡d(mod m),  则 a±c≡b±d(mod m)
+  同余相乘: 若 a≡b(mod m) & c≡d(mod m),  则 a*c≡b*d(mod m)
+5.0
