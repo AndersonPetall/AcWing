@@ -11,7 +11,7 @@ int get_primes(int x){
         primes[cnt++] = i;
         for(int j = i + i; j <= x; j += i) st[j] = true;
     }
-    return cnt++;
+    return cnt;
 }
 int main(){
     int n; cin >> n;
@@ -34,7 +34,7 @@ int get_primes(int x){
             primes[cnt++] = i;
             for(int j = i + i; j <= x; j += i) st[j] = true;
         }
-    return cnt++;
+    return cnt;
 }
 int main(){
     int n; cin >> n;
@@ -56,7 +56,7 @@ int get_primes(int x){
             ++cnt;
             for(int j = i + i; j <= x; j += i) st[j] = true;
         }
-    return cnt++;
+    return cnt;
 }
 int main(){
     int n; cin >> n;
