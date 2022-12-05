@@ -5,7 +5,7 @@ int phi(int x){
     for(int i = 2; i <= x/i; ++i)
         if(x % i == 0){
             res -= res/i;
-            while(x % i == 0) x /= i;
+            while(x % i == 0) x /= i;  //while(!(x%1)) x/=i
         }
     if(x > 1) res -= res/x;
     return res;
