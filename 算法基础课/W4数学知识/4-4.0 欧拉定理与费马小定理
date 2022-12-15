@@ -9,10 +9,11 @@
     a*c mod n = b*c mod n ==> (a*c - b*c) mod n = 0 ==>(a-b)* c mod n = 0
     c和n 互质, 则 n|c \= 0, 则 n|(a-b) = 0, 即 a ≡ b (mod n)
   
-  假设1~n中与整数n互质且不相同的数为 p1, p2,....pn, 共计ϕ(n)个
-  pi \≡ pj (mod n)  ==> a*pi \≡ a*pj (mod n)
+  假设1~n中与整数n互质且不相同的数为 p1, p2,....pn, 共计ϕ(n)个(欧拉函数)
+  pi ≡ pj (mod n)  ==> a*pi ≡ a*pj (mod n)
   则 a*p1 * a*p2 *.... * a*pn ≡ p1 * p2 * .... * pn (mod n)
-  ==两边同除(p1*p2*...*pn),且有ϕ(n)项a==>  a^(ϕ(n)) ≡ 1 (mod n)
+  ==两边同除(p1*p2*...*pn)(同余性质,5.0 模数运算(gcd(pi,n)=1),且有ϕ(n)项a
+  ==>  a^(ϕ(n)) ≡ 1 (mod n)
 
 
 费马小定理(Fermat's little theorem)
