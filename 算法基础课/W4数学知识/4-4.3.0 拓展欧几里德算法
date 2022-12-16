@@ -8,7 +8,7 @@
 若b = 0  (递归边界)
   gcd(a, b) = a
   x = 1
-若b \= 0  (递归普通)
+若b != 0  (递归普通)
   根据 4-2.3.0 欧几里德算法, gcd(a, b) = gcd(b, a%b)
   x*a + y*b = gcd(a, b)
   x1*b + y1*(a%b) = gcd(b, a%b) = x1*b + y1*(a-[a/b]*b) = y1*a + (x1-[a/b]*y1)*b
