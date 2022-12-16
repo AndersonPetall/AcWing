@@ -6,7 +6,7 @@ LL qmi(LL a, LL b, LL c){
     LL res = 1;
     while(b){
         if(b&1) res = res * a % c;
-        a = a * (LL)a % c;
+        a = a * a % c;
         b >>= 1;
     }
     return res;
