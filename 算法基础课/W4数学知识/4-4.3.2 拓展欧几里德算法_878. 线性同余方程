@@ -18,4 +18,4 @@ PS
 为什么x'和 x'%m 对 m 同余?
   假设x' 不在int范围内, x'%m 在int范围内
   a*x' + m*y' = b  ==>  a*(x1 + n*m) + m*(y1-n*a) = b  (n为某整数)
-  x' = x1 + n*m  ==> x1 = x'%m
+  x' <=> x1 + n*m  ==> x1 = x'%m
