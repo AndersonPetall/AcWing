@@ -15,8 +15,7 @@ int main(){
     int n; scanf("%d", &n);
     while(n--){
         LL a, b; scanf("%lld%lld", &a, &b);
-        if(a % b ) printf("%lld\n",qmi(a,b-2,b));
-        else puts("impossible");
+        a%b ? printf("%lld\n",qmi(a,b-2,b)):puts("impossible");
     }
     return 0;
 }
