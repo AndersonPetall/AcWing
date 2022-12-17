@@ -18,26 +18,29 @@ Eg:
 
 
 
-通解和齐次解
-1 非齐次线性方程组的解 由 特解，齐次通解构成，
-2 齐次通解由基础解系和系数构成，
-3 相同的基础解系对应相同的特解，
-4 同一方程组的基础解系是可以相互转化的
 (reference: https://www.zhihu.com/question/59816652 )
+通解和齐次解
+  1 非齐次线性方程组的解 由 特解，齐次通解构成，
+  2 齐次通解由基础解系和系数构成，
+  3 相同的基础解系对应相同的特解，
+  4 同一方程组的基础解系是可以相互转化的
 
 
 
 
-拓展欧几里得算法
-A*x+by=gcd(a,b)
+(reference: https://www.acwing.com/solution/content/1393/)
+通解 = 特解 + 齐次解
 
-假设 d = gcd(a,b)
-则 ax + by = c 有解的条件为 d|c
+拓展欧几里得算法  a*x+by=gcd(a,b)
+假设 d = gcd(a,b) 则方程 a*x + b*y = c 有解的条件为 d|c
  若ax0+by0=d
 则特解为 x′=x0∗c/d,y′=y0∗c/d
 
-通解 = 特解 + 齐次解
-齐次解即为方程 ax+by=0的解
-故而通解为 x=x′+k∗b/d,y=y′−k∗a/dk∈zx=x′+k∗b/d,y=y′−k∗a/dk∈z
-若令 t=b/dt=b/d, 则对于 xx 的最小非负整数解为 (x′%t+t)%t
+齐次解即为方程 a*x+b*y=0的解
+故而通解为 x=x′+k∗b/d,y=y′−k∗a/d  k∈z 
+若令 t=b/dt=b/d, 则对于 x 的最小非负整数解为 (x′%t+t)%t
+
+应用: 求解一次同余方程 a*x≡b(modm)
+  a*x≡b(modm)  <==>  a*x-m*y = b  有解的条件为 gcd(a,m)|b
+  特别的 当 b=1 且 a与m互质时 则所求的x即为a模m的逆元
 
