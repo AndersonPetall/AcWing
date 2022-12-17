@@ -44,3 +44,28 @@ int main(){
     }
     return 0;
 }
+
+
+
+//EDITION　拓展欧几里得算法  详见 4-4.3.0 补充-通解,特解与拓展欧几里德算法
+#include<iostream>
+using namespace std;
+using LL = long long;
+
+int exgcd(int a, int b, int &x, int &y){
+    if(!b){
+        x=1,y=0;
+        return a;
+    }
+    int d = exgcd(b,a%b,y,x);
+    y-=a/b*x;
+    return d;
+}
+int main(){
+    int n; cin>>n;
+    while(n--){
+        int a,b,x,y;scanf("%d%d",&a,&b);
+        exgcd(a,b,x,y) == 1 ? printf("%lld\n",((long long)x+b)%b):puts("impossible");
+    }
+    return 0;
+}
