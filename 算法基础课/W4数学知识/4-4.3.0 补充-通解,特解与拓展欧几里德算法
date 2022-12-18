@@ -40,7 +40,7 @@ Eg:
 故而通解为 x=x′+k∗b/d,y=y′−k∗a/d  k∈z 
 若令 t=b/d, 则对于 x 的最小非负整数解为 (x′%t+t)%t
 
-应用: 求解一次同余方程 a*x≡b(modm)
-  a*x≡b(modm)  <==>  a*x-m*y = b  有解的条件为 gcd(a,m)|b
+应用: 求解一次同余方程 a*x≡b(mod m)
+  a*x≡b(mod m)  <==>  a*x-m*y = b  有解的条件为 gcd(a,m)|b
   特别的 当 b=1 且 a与m互质时 则所求的x即为a模m的逆元
 
