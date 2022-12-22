@@ -21,8 +21,7 @@ int C(int a, int b, int p){
     return res;
 }
 int lucas(LL a, LL b, int p){
-    if(a<p && b<p) return C(a, b, p);
-    return (LL)C(a%p,b%p,p)*lucas(a/p,b/p,p)%p;
+    return (a<p&&b<p)?C(a, b, p):(LL)C(a%p,b%p,p)*lucas(a/p,b/p,p)%p;
 }
 int main(){
     int n; cin>>n;
