@@ -5,7 +5,7 @@ const int N = 110;
 int n, a[N][N];
 int gauss(){
     int c,r;
-    for(c=0,r=0;c<n;++c){
+    for(c=r=0;c<n;++c){
         int t = r;
         for(int i=r;i<n;++i)if(a[i][c]){t=i;break;}
         if(!a[t][c])continue;
