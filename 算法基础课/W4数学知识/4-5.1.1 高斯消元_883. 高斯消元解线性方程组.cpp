@@ -61,7 +61,7 @@ int gauss(int n){
         for(int i=n;i>=c;--i)a[r][i]/=a[r][c];
         //利用最大值所在的行,将未操作的方程组的列C的系数变为0
         for(int i=r+1;i<n;++i)
-            if(fabs(a[i][c])>eps)
+            if(fabs(a[i][c])>eps) //若当前最大值存在(不为零,则进行操作)
                 for(int j=n;j>=c;--j)a[i][j]-=a[r][j]*a[i][c];
         ++r;
     }
