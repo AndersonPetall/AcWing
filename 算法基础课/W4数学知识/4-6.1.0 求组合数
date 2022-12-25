@@ -1,4 +1,25 @@
-方法一:
+问题:  给定a,b  求C(a,b)mod(1e9+7)的值  (a下标,b上标 && a<=b)
+范围:  1e5组数据  1<=b<=a<=2*1e3  
+方法:  递推
+时间复杂度:  N^2
   从i中选j个  ==>  
     不选某个特定的人, 则原问题为 从(i-1) 中选 j 个
     选某个特定的人, 则原问题为 从(i-1) 中选 (j-1) 个
+
+
+问题:  给定a,b  求C(a,b)mod(1e9+7)的值  (a下标,b上标 && a<=b)
+范围:  1e4组数据  1<=b<=a<=1e5  
+方法:  快速幂逆元预处理
+时间复杂度:  N*lgN
+C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
+  假设fact[i] = i!, infact[i] 为 i! 模 mod 的逆元 ==> C(m,n) = fact[m]*infact[n]*infact[m-n]
+
+
+问题:  给定a,b,p  求C(a,b)mod p的值  (a下标,b上标 && a<=b)
+范围:  20组数据  1<=b<=a<=1e18  1<=p<=1e5
+方法:  卢卡斯定理 Lucas Theory  + 快速幂逆元预处理
+时间复杂度:  logp(N) * p*lgp  
+卢卡斯定理 Lucas Theor
+  C(a,b) ≡ C(a mod p,b mod p) * C(a/p,b/p) j(mod p)
+C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
+  假设fact[i] = i!, infact[i] 为 i! 模 mod 的逆元 ==> C(m,n) = fact[m]*infact[n]*infact[m-n]
