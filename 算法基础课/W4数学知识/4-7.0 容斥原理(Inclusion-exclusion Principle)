@@ -1,0 +1,4 @@
+容斥原理(Inclusion-exclusion Principle)
+  EG: 被计数的事物分为A,B,C三类, 则该事物的元素总和为
+  (A∪B∪C = A+B+C - A∩B - B∩C - C∩A + A∩B∩C)
+  
