@@ -6,3 +6,9 @@
 reference url:
   https://wuli.wiki/online/HsBN.html
   
+C(n,0) + C(n,1) + C(n,2) + ... + C(n,n) = 2^n;
+证明:  将n个小球放置在不同的两个盒子中,盒子可为空
+  左边: 分类原理
+    
+  右边: 排列原理
+  
