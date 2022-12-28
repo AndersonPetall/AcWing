@@ -2,3 +2,28 @@
   EG: 被计数的事物分为A,B,C三类, 则该事物的元素总和为
   (A∪B∪C = A+B+C - A∩B - B∩C - C∩A + A∩B∩C)
   
+Reference Url:
+  https://oi-wiki.org/math/combinatorics/inclusion-exclusion-principle/
+  https://www.youtube.com/watch?v=dKDm7_NdmSk
+  https://www.youtube.com/watch?v=ye40MFgcrY4&t=27s
+  
+function 1:
+  |U(i=1,n)Si| = ∑(i)|Si| - ∑(i<j)|SinSj| + ∑(i<j<k)|SinSjnSk| - ... + (-1)^(m-1)*∑((ai)<(aj+1))|n(i=1,m)Sai| + ... + (-1)^(n-1)*|S1nS2n...nSn|
+function 2:
+  |n(i=1,n)‾Si| = N - |U(i=1,n)Si| 
+                = N - ∑(i)|Si| + ∑(i<j)|SinSj| - ∑(i<j<k)|SinSjnSk| + ... + (-1)^(m)*∑((ai)<(aj+1))|n(i=1,m)Sai| + ... + (-1)^(n)*|S1nS2n...nSn|
+
+证明
+function 1  假设元素x有k个属性(1<=k<=n), 则元素x出现的次数为  
+  C(k,1) - C(k,2) + C(k,3) - ... + (-1)^(k-1)*C(k,k)
+  = C(k,0) - C(k,0) + C(k,1) - C(k,2) + C(k,3) - ... + (-1)^(k-1)*C(k,k)
+  = C(k,0) - [C(k,0) - C(k,1) + C(k,2) - C(k,3) + ... + (-1)^(k)*C(k,k)]
+  = 1 - (1-1)^k = 1  
+  ==> 元素x的出现次数共计为 1 次
+function 2  计算不满足任意属性的元素的出现次数
+  元素x满足 0 个属性  1-0-0-0-...+(-1)^m*0 = 1
+  元素x满足 1 个属性  1-1-0-0-...+(-1)^m*0 = 0
+  元素x满足 2 个属性  1-1-1+1-...+(-1)^m*0 = 0
+  ...
+  元素x满足 n 个属性  C(n,0) - C(n,1) + C(n,2) - C(n,3) + ... + (-1)^(n)*C(n,n) = (1-1)^k = 0
+  ==> 元素x的出现次数共计为 1 次
