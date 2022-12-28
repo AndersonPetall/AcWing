@@ -1,6 +1,7 @@
 二项式定理(Binomial Theorem)
   (a+b)^n = C(n,0)*a^n + C(n,1)*a(n-1)*b + C(n,2)*a(n-2)*b^2 + ... + C(n,r)*a^(n-r)*b^r + ... + C(n,n)*b^n (n∈N+)
 
+  若 a = 1, b = -1, 则 0 = C(n,0) - C(n,1) + C(n,2) + ... + (-1)^r*C(n,r) + ... + (-1)^n*C(n,n) (n∈N+)
   
   
 reference url:
