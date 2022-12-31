@@ -59,16 +59,15 @@ SG定理(Sprague-Grundy Theorem)
 #include<iostream>
 #include<cstring>
 #include<algorithm>
-#include<unordered_set>
+#include<set>
 using namespace std;
 const int N = 1e2+10,M=1e4+10;
-int n,m,s[N],f[M];
+int n,m,s[N],f[M];//s存储的是可供选择的集合,f存储的是所有可能出现过的情况的sg值
 int sg(int x){
-    if(f[x]!=-1) return f[x];
-    unordered_set<int> S;
+    if(f[x]!=-1) return f[x]; //因为取石子数目的集合是已经确定了的,所以每个数的sg值也都是确定的,如果存储过了,直接返回即可
+    set<int> S;
     for(int i=0;i<m;++i){
-        int sum = s[i];
-        if(x >= sum) S.insert(sg(x-sum));
+        if(x >= s[i]) S.insert(sg(x-s[i]));
     }
     for(int i=0;;++i)if(!S.count(i)) return f[x] = i;
 }
