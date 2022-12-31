@@ -45,3 +45,34 @@ SG定理(Sprague-Grundy Theorem)
       在此条件下,假设第i个有向图子游戏的SG函数为SG(g),题目中要求至少行走一步,所以0<=SG(g)<SG(Gi) 而且 SG(G1)^SG(G2)^...^(SG(g))^...SG(Gn) = 0
       ==>  SG(G1)^SG(G2)^...^(SG(g))^...SG(Gn) = SG(G1)^SG(G2)^...^(SG(Gi))^...SG(Gn), 根据异或的满足消除率, 则 SG(g) = SG(Gi), 与 SG(g)<SG(Gi) 矛盾
   
+
+
+#include<iostream>
+#include<cstring>
+#include<algorithm>
+#include<unordered_set>
+using namespace std;
+const int N = 1e2+10,M=1e4+10;
+int n,m,s[N],f[M];
+int sg(int x){
+    if(f[x]!=-1) return f[x];
+    unordered_set<int> S;
+    for(int i=0;i<m;++i){
+        int sum = s[i];
+        if(x >= sum) S.insert(sg(x-sum));
+    }
+    for(int i=0;;++i)if(!S.count(i)) return f[x] = i;
+}
+int main(){
+    cin>>m;
+    for(int i=0;i<m;++i)cin>>s[i];
+    cin>>n;
+    memset(f,-1,sizeof f);
+    int res=0;
+    for(int i=0;i<n;++i){
+        int x;cin>>x;
+        res ^=sg(x);
+    }
+    res ? puts("Yes") : puts("No");
+    return 0;
+}
