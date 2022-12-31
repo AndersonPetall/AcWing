@@ -24,8 +24,8 @@ Bouton's Theorem：局面为先手必败当且仅当各堆石子数异或和为0
     ==> a1^a2^a3^...^(ai^x)^...an = x^x = 0
   若a1^a2^a3^...an = x = 0, 那么无论玩家怎么操作,各堆石子数异或和均不为0(x != 0)
     反证法: 假设玩家从第i堆石子中拿走若干个,结果仍然是0.
-      在此条件下,假设第i堆石子剩下a个,题目中要求至少拿一个,所以0<=a<ai 而且 a1^a2^a3^...^(a)^...an = x^x = 0
-      ==>  a1^a2^a3^...^(ai)^...an = a1^a2^a3^...^(a)^...an = x^x, 并且异或运算满足消除率, 则 ai = a, 与 a < ai 矛盾
+      在此条件下,假设第i堆石子剩下a个,题目中要求至少拿一个,所以0<=a<ai 而且 a1^a2^a3^...^(a)^...an = 0
+      ==>  a1^a2^a3^...^(ai)^...an = a1^a2^a3^...^(a)^...an, 根据异或的满足消除率, 则 ai = a, 与 a < ai 矛盾
 Reference Url:
   https://www.cnblogs.com/exponent/articles/2141477.html
   https://zhuanlan.zhihu.com/p/358979118
