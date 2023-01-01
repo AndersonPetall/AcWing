@@ -1,3 +1,4 @@
+ICG中选手状态/局面
 N-position(Next)先手必胜状态
   当前轮move的人有必胜的策略, 即是 先手可保证必胜/先手必胜
 P-position(Previous)先手必败状态
