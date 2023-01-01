@@ -8,10 +8,7 @@ int n,m, res=0,s[N],f[M];
 int sg(int x){
     if(f[x]!=-1) return f[x];
     set<int> S;
-    for(int i=0;i<m;++i){
-        if(x >= s[i]) S.insert(sg(x-s[i]));
-        else continue;
-    }
+    for(int i=0;i<m;++i) if(s[i]<=x) S.insert(sg(x-s[i]));
     for(int i=0;;++i)if(!S.count(i)) return f[x] = i;
 }
 int main(){
