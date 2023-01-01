@@ -8,10 +8,10 @@ Reference Url:
   https://www.youtube.com/watch?v=ye40MFgcrY4&t=27s
   
 function 1:
-  |U(i=1,n)Si| = ∑(i)|Si| - ∑(i<j)|SinSj| + ∑(i<j<k)|SinSjnSk| - ... + (-1)^(m-1)*∑((ai)<(aj+1))|n(i=1,m)Sai| + ... + (-1)^(n-1)*|S1nS2n...nSn|
+  |U(i=1,n)Si| = ∑(i)|Si| - ∑(i<j)|Si⋂Sj| + ∑(i<j<k)|Si⋂Sj⋂Sk| - ... + (-1)^(m-1)*∑((ai)<(aj+1))|n(i=1,m)Sai| + ... + (-1)^(n-1)*|S1⋂S2⋂...⋂Sn|
 function 2:
-  |n(i=1,n)‾Si| = N - |U(i=1,n)Si| 
-                = N - ∑(i)|Si| + ∑(i<j)|SinSj| - ∑(i<j<k)|SinSjnSk| + ... + (-1)^(m)*∑((ai)<(aj+1))|n(i=1,m)Sai| + ... + (-1)^(n)*|S1nS2n...nSn|
+  |⋂(i=1,n)‾Si| = N - |U(i=1,n)Si| 
+                = N - ∑(i)|Si| + ∑(i<j)|Si⋂Sj| - ∑(i<j<k)|Si⋂Sj⋂Sk| + ... + (-1)^(m)*∑((ai)<(aj+1))|n(i=1,m)Sai| + ... + (-1)^(n)*|S1⋂S2⋂...⋂Sn|
 
 证明
 function 1  假设元素x有k个属性(1<=k<=n), 则元素x出现的次数为  
