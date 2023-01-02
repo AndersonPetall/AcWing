@@ -1,3 +1,4 @@
+//EDITION self
 #include<iostream>
 using namespace std;
 using LL = long long;
@@ -17,7 +18,7 @@ int main(){
 }
 
 
-
+//EDITION　ACwing
 #include<iostream>
 #include<algorithm>
 using namespace std;
