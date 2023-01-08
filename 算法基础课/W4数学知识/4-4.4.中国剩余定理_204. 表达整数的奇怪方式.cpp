@@ -49,7 +49,7 @@ int main(){
         LL d = exgcd(a1,a2,k1,k2);
         if((m2-m1)%d){puts("-1");return 0;}//判断是否有解
         LL t = abs(a2/d);//abs为求绝对值的内置方程
-        k1 *= (m2-m1)/d;//求(m2-m1)下对应的k1值
+        k1 *= (m2-m1)/d;//求当值为(m2-m1)时,对应的k1值
         k1 = (k1%t+t)%t;//k1 = k1 + k*a2/gcd(a1,a2)  求 a2/gcd(a1,a2) 范围下的特解
         m1=k1*a1+m1;
         a1=abs(a1*a2/d);
