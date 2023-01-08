@@ -19,7 +19,7 @@ C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
 范围:  20组数据  1<=b<=a<=1e18  1<=p<=1e5
 方法:  卢卡斯定理 Lucas Theory  + 快速幂逆元预处理
 时间复杂度:  logp(N) * p*lgp  ->  近似p*lgN*lgp
-卢卡斯定理 Lucas Theor
+卢卡斯定理 Lucas' Theorem
   C(a,b) ≡ C(a mod p,b mod p) * C(a/p,b/p) j(mod p)
 C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
   假设fact[i] = i!, infact[i] 为 i! 模 mod 的逆元 ==> C(m,n) = fact[m]*infact[n]*infact[m-n]
