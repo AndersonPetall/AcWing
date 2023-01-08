@@ -1,0 +1,38 @@
+卢卡斯定理 Lucas' Theorem
+  C(a,b) ≡ C(a mod p,b mod p) * C(a/p,b/p) (mod p)
+C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
+
+证明:
+前置:
+  (1+x)^p = C(p,0)*(x^0) + C(p,1)*(x^1) + C(p,2)*(x^2) + ... + C(p,p-1)*(x^p-1) + C(p,p)*(x^p) 
+          ≡ [C(p,0)*(x^0) + C(p,p)*(x^p)] (mod p)
+          ≡ (1 + x^p) (mod p)
+
+step1:   
+假设整数a,b转化为p进制,其表达形式为:
+  a = ak*p^k + a(k-1)*p^(k-1) + a(k-2)*p^(k-2) + ... + a2*p^2 + a1*p^1 + a0*p^0
+  b = bk*p^k + b(k-1)*p^(k-1) + b(k-2)*p^(k-2) + ... + b2*p^2 + b1*p^1 + b0*p^0
+
+step2:
+  (1+x)^a = (1+x)^(ak*p^k + a(k-1)*p^(k-1) + a(k-2)*p^(k-2) + ... + a2*p^2 + a1*p^1 + a0*p^0)
+          = (1+x)^(ak*p^k) * (1+x)^(a(k-1)*p^(k-1)) * ... * (1+x)^(a1*p^1) * (1+x)^(a0*p^0)
+          = [(1+x)^(p^k)]^ak * [(1+x)^(p^(k-1))]^a(k-1) * ... * [(1+x)^(p^1)]^a1 * [(1+x)^(p^0)]^a0   
+          ≡ [1+x^(p^k)]^ak * [1+x^(p^(k-1))]^a(k-1) * ... * [1+x^(p^1)]^a1 * [1+x^(p^0)]^a0 (mod p)  前置知识
+
+step3:  求 x^b 的系数
+  等式左边为 C(a,b)
+  等式右边为 (b的p进制)
+    式[1+x^(p^k)]^ak中           求 x^bk      的系数  为C(ak,bk)
+    式[1+x^(p^(k-1))]^a(k-1)中   求 x^b(k-1)  的系数  为C(a(k-1),b(k-1))    
+    ...
+    式[1+x^(p^1)]^a1中           求 x^b1      的系数  为C(a1,b1)
+    式[1+x^(p^0)]^a0中           求 x^b0      的系数  为C(a0,b0)
+  ==> C(a,b) ≡ C(ak,bk) * C(a(k-1),b(k-1)) * ... * C(a1,b1) * C(a0,b0) (mod p)
+
+step4: 
+  已知a,b可表示为p进制, 则 a0 = a mod p, b0 = b mod p
+  已知方程 C(a,b) ≡ C(ak,bk) * C(a(k-1),b(k-1)) * ... * C(a1,b1) * C(a0,b0) (mod p)
+  假设方程中a,b同时在p进制中右移一位(乘以一个p),则方程可以表示为
+    C(a/p,b/p) ≡ C(ak,bk) * C(a(k-1),b(k-1)) * ... * C(a1,b1) (mod p)
+  ==> C(a,b) ≡ C(a/p,b/p) * C(a0,b0) (mod p)
+             ≡ C(a/p,b/p) * C(a mod p,b mod p) (mod p)
