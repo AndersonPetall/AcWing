@@ -1,3 +1,4 @@
+//EDITION self
 #include<iostream>
 using namespace std;
 using LL = long long;
@@ -26,8 +27,7 @@ int main(){
 
 
 
-
-
+//EDITION　ACwing
 #include<iostream>
 using namespace std;
 using LL = long long;
@@ -41,8 +41,8 @@ LL qmi(LL a, LL b, LL c){
 int main(){
     fact[0]=infact[0]=1;
     for(int i=1;i<N;++i){
-        fact[i]=(LL)fact[i-1]*i%mod;
-        infact[i]=(LL)infact[i-1]*qmi(i,mod-2,mod)%mod;
+        fact[i]=(LL)fact[i-1]*i%mod;  //预处理出乘阶数组 n*(n-1)*(n-2)...
+        infact[i]=(LL)infact[i-1]*qmi(i,mod-2,mod)%mod;  //预处理出逆元数组  n^(-1)*(n-1)^(-1)*(n-2)^(-1)...
     }
     int n;cin>>n;
     while(n--){
