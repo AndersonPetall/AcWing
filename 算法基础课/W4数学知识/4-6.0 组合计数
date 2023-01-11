@@ -2,8 +2,9 @@ C combination
 A arrangement
 
 C(m,n)(m下标,n上标 && n<=m)
-= m(m-1)(m-2)...(m-n+1)
+= m(m-1)(m-2)...(m-n+1)/n!
 = m!/[n!(m-n)!]
+= A(m,n)/A(n,n)
 = A(m,n)/n!
 
 
