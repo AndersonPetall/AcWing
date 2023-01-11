@@ -1,35 +1,35 @@
+//EDITION self
 #include<iostream>
-#include<algorithm>
 using namespace std;
 using LL = long long;
-LL qmi(LL a,LL k,LL p){
+LL qmi(LL a, LL b, LL p){
     if(!b) return 1;
-    LL res = qmi(a*a%c,b>>1,c);
-    return b&1 ? res*a%c : res;
+    LL res = qmi(a*a%p,b>>1,p);
+    return b&1 ? res*a%p : res;
 }
-int C(int a, int b, int p){
-    if(b>a)return 0;
-    int res = 1;
-    for(int i=1,j=a;i<=b;++i,--j){
-        res = (LL)res*j%p;
-        res=(LL)res*qmi(i,p-2,p)%p;
+LL C(LL a, LL b, LL p){
+    if(a<b) return 0;
+    LL res = 1;
+    for(int i=1,j=a; i<=b;++i,--j){
+        res = res*j%p;
+        res = res*qmi(i,p-2,p)%p;
     }
     return res;
 }
-int lucas(LL a, LL b, int p){
-    return (a<p&&b<p)?C(a, b, p):(LL)C(a%p,b%p,p)*lucas(a/p,b/p,p)%p;
+LL lucas(LL a, LL b, LL p){
+    return (a<p&&b<p) ? C(a,b,p) : C(a%p,b%p,p)*lucas(a/p,b/p,p)%p;
 }
 int main(){
-    int n; cin>>n;
+    int n;cin>>n;
     while(n--){
-        LL a,b;int p; scanf("%lld%lld%d",&a,&b,&p);
-        printf("%d\n",lucas(a,b,p));
+        LL a, b, p; scanf("%lld%lld%lld",&a,&b,&p);
+        printf("%lld\n",lucas(a,b,p));
     }
     return 0;
 }
 
 
-
+//EDITION　ACwing
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -43,7 +43,7 @@ int qmi(int a,int k, int p){
      }
      return res;
 }
-int C(int a, int b, int p){
+int C(int a, int b, int p){//C(m,n) = m(m-1)(m-2)...(m-n+1)/n!  (m下标,n上标 && n<=m)
     if(b>a)return 0;
     int res = 1;
     for(int i=1,j=a;i<=b;++i,--j){
