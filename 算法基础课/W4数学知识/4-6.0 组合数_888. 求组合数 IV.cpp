@@ -5,7 +5,7 @@ using namespace std;
 const int N = 5e3+10;
 int primes[N],cnt,sum[N];
 bool st[N];
-void get_primes(int n){
+void get_primes(int n){//线性筛选质数
     for(int i=2;i<=n;++i){
         if(!st[i]) primes[cnt++]=i;
         for(int j=0;primes[j]<=n/i;++j){
@@ -14,14 +14,14 @@ void get_primes(int n){
         }
     }
 }
-int get(int n, int p){
+int get(int n, int p){//返回n!中所有质数出现的次数
     int res=0;
     while(n){
         res+=n/p;n/=p;
     }
     return res;
 }
-vector<int> mul(vector<int> a, int b){
+vector<int> mul(vector<int> a, int b){//高精度乘法
     vector<int> c;
     int t=0;
     for(int i=0;i<a.size();++i){
