@@ -23,3 +23,16 @@ C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
   C(a,b) ≡ C(a mod p,b mod p) * C(a/p,b/p) (mod p)
 C(m,n)(m下标,n上标 && n<=m) = m!/[n!(m-n)!]
   假设fact[i] = i!, infact[i] 为 i! 模 mod 的逆元 ==> C(m,n) = fact[m]*infact[n]*infact[m-n]
+
+
+问题:  给定a,b  求C(a,b)的值  (a下标,b上标 && a<=b)  结果很大，需要使用高精度运算
+范围:  20组数据  1<=b<=a<=5e3 
+方法:  卢卡斯定理 Lucas Theory  + 快速幂逆元预处理
+时间复杂度:  logp(N) * p*lgp  ->  近似p*lgN*lgp
+C(a,b) = a(a-1)(a-2)...(a-b+1)/n! = a!/[b!(a-b)!]
+
+a!中出现质数p的次数为 c = [a/p] + [a/p^2] + [a/p^3] + ... + [a/p^n] (p^n <= a < p^(n+1))
+  ==>  a! 可以表示为质数相乘的形式 a! = p1^c1 * p2^c2 * p3*c3 * ... * pn^cn
+若 Ca表示为a!中出现质数p的次数，Cb表示为b!中出现质数p的次数，Cab表示为(a-b)!中出现质数p的次
+ 则命 C = Ca - Cb - Cab 
+  ==>  C(a,b) =  a!/[b!(a-b)!] = p1^C1 * p2^C2 * p3*C3 * ... * pn^Cn
