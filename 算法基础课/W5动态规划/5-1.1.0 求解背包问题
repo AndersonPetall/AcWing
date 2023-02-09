@@ -29,6 +29,13 @@ i = 4
 
 
 
-
-
-
+优化 滚动数组:一维数组 f[N][N] -> f[N]   保留上一次结果
+原状态转移方程 
+  for(int i=1;i<=n;++i)
+    for(int j=1;j<=m;++j)  正序
+      f[i][j]= max(f[i-1][j],f[i-1][j-v[i]]+w[i]);
+  若变为一维数组 f[j] = max(f[j],f[j-v[i]]+w[i]);  则当前计算的为第i轮的状态 -> f[i][j] = max(f[i][j],f[i][j-v[i]]+w[i]);
+方法: 逆序枚举背包容量
+  for(int i=1;i<=n;++i)
+    for(int j=m;j>=v[i];--j)  逆序
+      f[j]= max(f[j],f[j-v[i]]+w[i]);
