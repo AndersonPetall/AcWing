@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-const int N = 12010, M = 2010;
+const int N = 12010, M = 2010;  // N = 1000 * log2(2000) => 12000
 int v[N], w[N], f[M];
 int main(){
     int n,m, cnt=0; scanf("%d%d", &n, &m);
