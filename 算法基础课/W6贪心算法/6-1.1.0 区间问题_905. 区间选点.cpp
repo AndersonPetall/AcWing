@@ -2,21 +2,23 @@
 #include<algorithm>
 using namespace std;
 const int N = 1e5+10;
+int n;
 struct Range{
     int l, r;
     bool operator< (const Range &W)const{
-        return r<W.r;
+        return r < W.r;
     }
-} ranges[N];
+} range[N];
 int main(){
-    int n; scanf("%d", &n);
-    for(int i=0; i<n; ++i)scanf("%d%d", &ranges[i].l, &ranges[i].r);
-    sort(ranges, ranges+n);
+    scanf("%d", &n);
+    for(int i=0; i<n; ++i)scanf("%d%d", &range[i].l, &range[i].r);
+    sort(range,range+n);
     int res=0, ed=-2e9;
-    for(int i=0; i<n; ++i) if(ranges[i].l > ed){
-        ++res;
-        ed = ranges[i].r;
-    }
+    for(int i=0; i<n; ++i)
+        if(ed < range[i].l){  //若选点未能被区间包含, 则将区间右端点选为下一个点
+            ++res;
+            ed = range[i].r;  
+        }
     printf("%d\n", res);
     return 0;
 }
