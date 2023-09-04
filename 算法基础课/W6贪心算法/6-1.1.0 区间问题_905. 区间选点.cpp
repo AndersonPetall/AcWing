@@ -5,7 +5,7 @@ const int N = 1e5+10;
 int n;
 struct Range{
     int l, r;
-    bool operator< (const Range &W)const{
+    bool operator< (const Range &W)const{  //成员函数, 只读
         return r < W.r;
     }
 } range[N];
