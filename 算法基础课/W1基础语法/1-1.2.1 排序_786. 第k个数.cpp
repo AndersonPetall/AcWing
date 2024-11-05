@@ -4,7 +4,7 @@ using namespace std;
 const int N =1e5+10;
 int n,k,q[N];
 int quick_sort(int q[], int l, int r, int k){
-    if(l>=r) return q[l]; //递归结束标志
+    if(l>=r) return q[l]; //递归结束标志   if(l ==r) return q[l];
     int i=l-1,j=r+1,x=q[l+r>>1];//边界问题
     while(i<j){
         while(q[++i] < x) ; while(x<q[--j]);
