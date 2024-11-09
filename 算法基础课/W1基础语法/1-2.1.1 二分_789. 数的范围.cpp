@@ -3,14 +3,14 @@ using namespace std;
 int const N = 1e6+10;
 int n,m,q[N];
 int sl(int q[], int l, int r, int x){
-    while(l<r){
+    while(l<r){//左边<=， 右边>
         int mid=l+r>>1;
         q[mid]>=x? r=mid : l=mid+1;
     }
     return q[l]==x? l:-1;
 }
 int sr(int q[], int l, int r, int x){
-    while(l<r){
+    while(l<r){//左边<， 右边>=
         int mid=l+r+1>>1;
         x>=q[mid]? l=mid:r=mid-1;
     }
