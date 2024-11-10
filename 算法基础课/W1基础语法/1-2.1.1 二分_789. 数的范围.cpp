@@ -36,13 +36,13 @@ int const N = 1e6+10;
 int n,m,q[N];
 int sl(int q[], int l, int r, int x){
     while(l+1<r){//左边<， 右边>=
-        int mid=l+r>>1; q[mid] < x ? l=mid: r=mid;
+        int mid=l+r>>1; q[mid] >= x ? r=mid: l=mid;
     }
     return q[r]==x? r:-1;
 }
 int sr(int q[], int l, int r, int x){
     while(l+1<r){//左边<=， 右边>
-        int mid=l+r>>1; q[mid] > x ? r=mid : l = mid;
+        int mid=l+r>>1; q[mid] <= x ? l=mid : r=mid;
     }
     return q[l]==x? l:-1;
 }
