@@ -21,7 +21,7 @@ int main(){
     for(int i=0;i<n;++i)scanf("%d", &q[i]);
     while(m--){
         int x;scanf("%d", &x);
-        printf("%d %d\n", sl(q,-1,n-1,x),sr(q,0,n,x));
+        printf("%d %d\n", sl(q,0,n-1,x),sr(q,0,n-1,x));
     }
     return 0;
 }
@@ -50,7 +50,7 @@ int main(){
     for(int i=0;i<n;++i)scanf("%d", &q[i]);
     while(m--){
         int x;scanf("%d", &x);
-        printf("%d %d\n", sl(q,0,n-1,x),sr(q,0,n-1,x));
+        printf("%d %d\n", sl(q,-1,n-1,x),sr(q,0,n,x));
     }
     return 0;
 }
