@@ -22,7 +22,7 @@ int main(){
     while(m--){
         int x;scanf("%d", &x);;
         int l=0,r=n-1;
-        printf("%d %d\n", sl(q,0,n-1,x),sr(q,0,n-1,x));
+        printf("%d %d\n", sl(q,-1,n-1,x),sr(q,0,n,x));
     }
     return 0;
 }
