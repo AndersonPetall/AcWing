@@ -54,3 +54,34 @@ int main(){
     }
     return 0;
 }
+
+
+//思路
+//https://www.bilibili.com/video/BV1d54y1q7k7/?spm_id_from=333.1391.0.0
+#include<iostream>
+using namespace std;
+int const N = 1e6+10;
+int n,m,k,q[N];
+int main(){
+    scanf("%d%d",&n,&m);
+    for(int i=0;i<n;++i)scanf("%d",&q[i]);
+    while(m--){
+        scanf("%d",&k);
+        int l=-1,r=n;
+        while(l+1<r){
+            int mid=l+r>>1;
+            q[mid]<k?l=mid:r=mid;
+        }
+        if(q[r]!=k)printf("%d %d\n", -1,-1);
+        else{
+            printf("%d ",r);
+            int l=-1,r=n;
+            while(l+1<r){
+                int mid=l+r>>1;
+                q[mid]<=k?l=mid:r=mid;
+            }
+            printf("%d\n",l);
+        }
+    }
+    return 0;
+}
