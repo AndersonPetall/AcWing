@@ -1,19 +1,15 @@
 #include<iostream>
 using namespace std;
-const int N = 1e5 + 10;
-int n, q[N], s[N];
+int const N = 1e6+10;
 int main(){
+    int n,res=0,q[N],s[N];
     scanf("%d", &n);
-    for(int i = 0; i < n; ++i) scanf("%d", &q[i]);
-    int len = 0;
-    for(int i = 0, j = 0; j < n; ++j){
-        s[q[j]]++;
-        while(s[q[j]] == 2){
-            s[q[i]] --;
-            i++;
-        }
-        len = max(j - i + 1, len);
+    for(int i=0,j=0;i<n;++i){
+        scanf("%d",&q[i]);
+        s[q[i]]++;
+        while(j<i&&s[q[i]]>1)s[q[j++]]--; // --s[q[j++]]
+        res = max(res, i-j+1);
     }
-    printf("%d", len);
+    printf("%d",res);
     return 0;
 }
