@@ -1,14 +1,15 @@
 #include<iostream>
 using namespace std;
-const int N = 1e5 + 6;
-int n, m, x, A[N], B[N];
+const int N = 1e5+10;
+int n,m,k,a[N],b[N];
+#define read(x) scanf("%d",&x);
 int main(){
-    scanf("%d%d%d", &n, &m, &x);
-    for(int i = 0; i < n; ++i) scanf("%d", &A[i]);
-    for(int i = 0; i < m; ++i) scanf("%d", &B[i]);
-    for(int i = 0, j = m - 1; i < n; ++i){
-        while(j >= 0 && A[i] + B[j] > x) --j;
-        if(A[i] + B[j] == x) cout << i << " " << j <<endl;
+    scanf("%d%d%d",&n,&m,&k);
+    for(int i=0;i<n;++i)read(a[i]);
+    for(int j=0;j<m;++j)read(b[j]);
+    for(int i=0,j=m-1;i<n;++i){
+        while(j>=0&&a[i]+b[j]>k)j--;
+        if(j>=0&&a[i]+b[j]==k)printf("%d %d\n",i,j);
     }
     return 0;
 }
