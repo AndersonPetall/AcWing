@@ -1,3 +1,5 @@
+//和纯暴力的O(n2) 算法的区别就在于    j指针不会回退
+
 #include<iostream>
 using namespace std;
 const int N = 1e5+10;
